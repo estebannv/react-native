@@ -1,10 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, StatusBar } from 'react-native';
 import List from './src/components/List';
+import Slider from './src/components/Slider';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <List/>
+      <StatusBar barStyle='default'/>
+      <Text style={{color: "red", fontSize: 25, marginBottom: 5}}>Netflix</Text>
+      <ScrollView>
+        <Slider />
+        <List name="My List" />
+        <List name="Top Series" />
+      </ScrollView>
     </View>
   );
 }
@@ -12,8 +19,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#000000',
+    padding: "2%"
   },
 });
