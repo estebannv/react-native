@@ -51,7 +51,7 @@ class List extends Component {
 
     render() {
         return (
-            <View>
+            <View style={styles.container}>
                 <Text
                     style={styles.list_text}
                 >{this.props.name}</Text>
@@ -69,6 +69,7 @@ class List extends Component {
 const styles = StyleSheet.create({
     list_text:{
         color: "#FFFFFF",
+        marginLeft: 4,
         marginTop: "3%",
         marginBottom: "3%"
     },
@@ -76,6 +77,9 @@ const styles = StyleSheet.create({
         height: 180,
         width: 120,
     },
+    container:{
+        backgroundColor: "#000000"
+    }
 });
 
 export default List;

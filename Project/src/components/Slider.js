@@ -1,8 +1,37 @@
-import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, Text, View, Image } from 'react-native'
-import Swiper from 'react-native-swiper'
+import React, { Component } from 'react';
+import { AppRegistry, StyleSheet, Text, View, Image } from 'react-native';
+import Swiper from 'react-native-swiper';
+
+export default class SwiperComponent extends Component {
+
+    render() {
+
+        return (
+
+            <Swiper style={styles.wrapper} autoplay showsPagination={false}>
+                <View style={styles.slide1}>
+                    <Image
+                    style={styles.img}
+                        source={{
+                            uri: 'https://tierragamer.com/wp-content/uploads/2017/07/strangerthingsposter-1.jpg'
+                        }}
+                    />
+                </View>
+                <View style={styles.slide3}>
+                <Image
+                    style={styles.img}
+                        source={{
+                            uri: 'https://briansfilmlog.files.wordpress.com/2011/05/iron-man-2-review-main.png'
+                        }}
+                    />
+                </View>
+            </Swiper>
+        )
+    }
+}
 
 const styles = StyleSheet.create({
+    
     wrapper: {
         height: 250
     },
@@ -26,39 +55,6 @@ const styles = StyleSheet.create({
     img:{
         flex: 1
     }
-})
-
-export default class SwiperComponent extends Component {
-    render() {
-        return (
-            <Swiper style={styles.wrapper} autoplay showsPagination={false}>
-                <View style={styles.slide1}>
-                    <Image
-                    style={styles.img}
-                        source={{
-                            uri: 'https://tierragamer.com/wp-content/uploads/2017/07/strangerthingsposter-1.jpg'
-                        }}
-                    />
-                </View>
-                <View style={styles.slide2}>
-                <Image
-                    style={styles.img}
-                        source={{
-                            uri: 'https://christhilk.files.wordpress.com/2017/11/thor-banner.jpg'
-                        }}
-                    />
-                </View>
-                <View style={styles.slide3}>
-                <Image
-                    style={styles.img}
-                        source={{
-                            uri: 'https://briansfilmlog.files.wordpress.com/2011/05/iron-man-2-review-main.png'
-                        }}
-                    />
-                </View>
-            </Swiper>
-        )
-    }
-}
+});
 
 AppRegistry.registerComponent('myproject', () => SwiperComponent)
